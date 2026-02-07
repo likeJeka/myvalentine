@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffd1dc, #ff9a9e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Wrapper */
+.wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 28px;
+  padding: 28px 20px 32px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(255, 77, 109, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+/* Text */
+h1 {
+  margin: 0 0 6px;
+  color: #ff4d6d;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #ff8fab;
+  margin-bottom: 16px;
+}
+
+.question {
+  margin: 18px 0 12px;
+  color: #ff4d6d;
+}
+
+/* Image */
+img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  margin: 12px auto;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.buttons button {
+  flex: 1;
+  height: 52px;
+  border-radius: 18px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, #ff4d6d, #ff8fab);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 77, 109, 0.45);
+}
+
+#noBtn {
+  background: #f1f1f1;
+  color: #555;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.buttons button:active {
+  transform: scale(0.97);
+}
+
+/* Message */
+#message {
+  display: none;
+  margin-top: 22px;
+  font-size: 20px;
+  color: #ff4d6d;
+}
+
+/* Hearts */
+.hearts span {
+  position: fixed;
+  bottom: -20px;
+  animation: floatUp linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* 📱 Mobile fine-tune */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .buttons button {
+    font-size: 16px;
+  }
+}
