@@ -14,7 +14,7 @@ noBtn.addEventListener("click", () => {
   title.textContent = "BABE PLEASEEEE 💔";
 });
 
-// 💖 YES
+// 💖 YES → FIREWORKS 🎆
 yesBtn.addEventListener("click", () => {
   message.style.display = "block";
   title.textContent = "The best girl in the world 💞";
@@ -24,23 +24,46 @@ yesBtn.addEventListener("click", () => {
 
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
+
+  launchFireworks(); // 🎆 ВОТ ОН
 });
 
-// 💗 Hearts generator
-const heartsContainer = document.querySelector(".hearts");
+// 🎆 FIREWORKS FUNCTION
+function launchFireworks() {
+  for (let i = 0; i < 100; i++) {
+    const particle = document.createElement("div");
+    particle.className = "firework";
 
-function createHeart() {
-  const heart = document.createElement("span");
-  heart.innerHTML = "💗";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 4 + Math.random() * 4 + "s";
-  heart.style.fontSize = 16 + Math.random() * 24 + "px";
+    const colors = [
+  "#ff004c",  // hot pink
+  "#ff3d81",
+  "#ff7aa2",
+  "#ffd1dc",
+  "#ffffff"
+];
 
-  heartsContainer.appendChild(heart);
+    particle.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
+    particle.style.color = particle.style.background;
+    const angle = Math.random() * Math.PI * 2;
+    const distance = Math.random() * 220 + 40;
 
-  setTimeout(() => {
-    heart.remove();
-  }, 8000);
+    particle.style.setProperty(
+      "--x",
+      `${Math.cos(angle) * distance}px`
+    );
+    particle.style.setProperty(
+      "--y",
+      `${Math.sin(angle) * distance}px`
+    );
+
+    particle.style.left = "50%";
+    particle.style.top = "45%";
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => particle.remove(), 1000);
+  }
 }
 
-setInterval(createHeart, 300);
+// 💗

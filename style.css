@@ -132,3 +132,34 @@ img {
     font-size: 16px;
   }
 }
+/* 🎆 FIREWORKS — FIXED */
+/* 🎆 FIREWORKS — SUPER BRIGHT */
+.firework {
+  position: fixed;
+  width: 14px;                 /* ⬅️ БОЛЬШЕ */
+  height: 14px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 1;
+  filter: blur(0.5px);         /* ⬅️ glow */
+  box-shadow:
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;     /* ⬅️ ЯРКОСТЬ */
+  animation: explode 1.1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(0, 0) scale(1.4);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0.4);
+    opacity: 0;
+  }
+}
