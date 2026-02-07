@@ -6,26 +6,27 @@ const gif = document.getElementById("gif");
 
 let scale = 1;
 
-// 😈 NO → YES становится больше
+// 😈 NO → YES becomes bigger
 noBtn.addEventListener("click", () => {
   scale += 0.3;
   yesBtn.style.transform = `scale(${scale})`;
 
-  title.textContent = "Дианочка, ну пожааалуйста 🥺💔";
+  title.textContent = "BABE PLEASEEEE 💔";
 });
 
 // 💖 YES
 yesBtn.addEventListener("click", () => {
   message.style.display = "block";
-  title.textContent = "Самая лучшая девочка 💞";
+  title.textContent = "The best girl in the world 💞";
+
   gif.src =
-    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3N1aWx1bmx3b2d3M25kZ2M3ZW52M2N4M2s3eGx0Mmt2dm41NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0MYt5jPR6QX5pnqM/giphy.gif";
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRpcXBiZHRlb3hwMnVrOGZxbDl2bW5heHFpOGNlZzNqOWNwZzVsbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ly4lBWq3bDydVbGtzH/giphy.gif";
 
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
 });
 
-// 💗 Генератор сердечек
+// 💗 Hearts generator
 const heartsContainer = document.querySelector(".hearts");
 
 function createHeart() {
